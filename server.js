@@ -15,6 +15,8 @@ const app = express();
 //Specifying the port
 const port = process.env.PORT || 5000;
 
+const schedular = require("./jobs/schedular")
+
 //Serving Static Folder
 app.use(
   "/api/public/images",
@@ -38,11 +40,7 @@ const errorHandler = require("./middlewares/errorHandler");
 app.use(errorHandler);
 
 //Scripts Scheduling
-const cron = require("node-cron");
-// Define a cron job that runs every 14 minutes
-// cron.schedule("*/14 * * * *", () => {
-//   ...
-// });
+schedular()
 
 //Listening om the port
 app.listen(port, () => {

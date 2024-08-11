@@ -18,7 +18,7 @@ const {
   passwordResetSuccessMessage
 } = require("../utils/messages.json");
 const baseUrl = require("../constants/baseUrl");
-const ROLES_LIST = require("../utils/rolesList")
+const ROLES_LIST = require("../utils/rolesList");
 
 const { generateTokens, generateAccessTokenFromRefreshToken } = require("../utils/generateTokens");
 
